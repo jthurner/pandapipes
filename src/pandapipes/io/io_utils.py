@@ -28,6 +28,7 @@ logger = logging.getLogger(__name__)
 
 
 class DeserializationNotAllowed(Exception):
+
     """Raised when deserialization of a type is blocked by the security allowlist."""
 
 
@@ -40,7 +41,8 @@ _SAFE_BUILTIN_NAMES = frozenset({"complex", "tuple", "set", "frozenset"})
 
 
 def _is_safe_to_deserialize(module_name, class_name, class_):
-    """True if this (module, name) is an explicitly permitted non-JSONSerializableClass type.
+    """
+    True if this (module, name) is an explicitly permitted non-JSONSerializableClass type.
 
     Covers the types produced by pandapipes/pandapower's to_serializable registry:
       builtins  — complex, tuple, set, frozenset
