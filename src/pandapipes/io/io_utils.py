@@ -28,7 +28,6 @@ logger = logging.getLogger(__name__)
 
 
 class DeserializationNotAllowed(Exception):
-
     """Raised when deserialization of a type is blocked by the security allowlist."""
 
 
